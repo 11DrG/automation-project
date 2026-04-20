@@ -4,13 +4,6 @@ from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 
-@pytest.fixture
-def logged_in_page(page: Page):
-    login = LoginPage(page)
-    login.navigate()
-    login.login("standard_user", "secret_sauce")
-    return page
-
 def test_add_item_to_cart(logged_in_page: Page):
     inventory = InventoryPage(logged_in_page)
     inventory.add_item_to_cart("sauce-labs-backpack")
