@@ -14,3 +14,6 @@ class InventoryPage:
 
     def get_cart_count(self):
         return self.cart_badge.text_content()
+    
+    def sort_by_price_low_to_high(self):
+        self.page.locator("[data-test='product-sort-container']").select_option("lohi")
