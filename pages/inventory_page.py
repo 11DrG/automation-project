@@ -17,3 +17,9 @@ class InventoryPage:
     
     def sort_by_price_low_to_high(self):
         self.page.locator("[data-test='product-sort-container']").select_option("lohi")
+
+def filter_by_price_range(self, min_price, max_price):
+    self.page.locator("[data-test='filter-price-min']").fill(str(min_price))
+    self.page.locator("[data-test='filter-price-max']").fill(str(max_price))
+    self.page.locator("[data-test='filter-button']").click()
+        
