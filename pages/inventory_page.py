@@ -22,4 +22,13 @@ class InventoryPage:
         self.page.locator("[data-test='filter-price-min']").fill(str(min_price))
         self.page.locator("[data-test='filter-price-max']").fill(str(max_price))
         self.page.locator("[data-test='filter-button']").click()
+    
+    def sort_by_name_a_to_z(self):
+        self.page.locator("[data-test='product-sort-container']").select_option("az")
+
+    def sort_by_name_z_to_a(self):
+        self.page.locator("[data-test='product-sort-container']").select_option("za")
+
+    def sort_by_price_high_to_low(self):
+        self.page.locator("[data-test='product-sort-container']").select_option("hilo")
         
